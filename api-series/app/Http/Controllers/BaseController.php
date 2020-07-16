@@ -42,9 +42,6 @@ abstract class BaseController
             ], 404);
         }
 
-        var_dump("aqui");
-        die();
-
         $recurso->fill($request->all());
         $recurso->save();
 
