@@ -11,7 +11,6 @@ abstract class BaseController
 
     public function index(Request $request)
     {
-        $offset = ($request->page - 1) * $request->per_page;
         return $this->classe::paginate($request->per_page);
         /**  query()
             ->offset($offset)  Busca apartir desse elemeto exclusivo, pega o proximo em diante
@@ -42,6 +41,10 @@ abstract class BaseController
                 'erro' => 'Recurso não encontrado'
             ], 404);
         }
+
+        var_dump("aqui");
+        die();
+
         $recurso->fill($request->all());
         $recurso->save();
 
