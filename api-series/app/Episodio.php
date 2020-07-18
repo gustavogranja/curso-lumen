@@ -21,7 +21,7 @@ class Episodio extends Model
         return $assistido;
     }
 
-    public function getLInksAttribute($links): array
+    public function getLInksAttribute(): array
     {
         return [
             'self' => '/api/episodios/' . $this->id,
